@@ -108,5 +108,7 @@ void				ft_putstr_bdr_fd(char const *s, char bdr, int fd);
 void				ft_putnbr_bdr(int n, char bdr);
 void				ft_putnbr_bdr_fd(int n, char bdr, int fd);
 void				ft_putnbrendl_fd(int n, int fd);
+int					ft_strnbc(char *str, char c);
+int					ft_onlyspc(char *str);
 
 #endif

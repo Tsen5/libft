@@ -21,6 +21,15 @@
 
 # define BUFF_SIZE 300
 
+# define RED   "\x1B[31m"
+# define GRN   "\x1B[32m"
+# define YEL   "\x1B[33m"
+# define BLU   "\x1B[34m"
+# define MAG   "\x1B[35m"
+# define CYN   "\x1B[36m"
+# define WHT   "\x1B[37m"
+# define RESET "\x1B[0m"
+
 typedef struct		s_list
 {
 	void			*content;
@@ -97,6 +106,7 @@ int					ft_pgcd(int a, int b);
 char				**ft_strsplitspc(char const *s);
 int					get_next_line(const int fd, char **line);
 void				ft_dbarrprint(char **dbarr);
+void				ft_dbarrprint_fd(char **dbarr, int fd);
 int					ft_dbarrlen(char **dbarr);
 char				**ft_dbarrdup(char **o_array);
 char				**ft_dbarr_add(char **array, char *content);
@@ -110,5 +120,13 @@ void				ft_putnbr_bdr_fd(int n, char bdr, int fd);
 void				ft_putnbrendl_fd(int n, int fd);
 int					ft_strnbc(char *str, char c);
 int					ft_onlyspc(char *str);
+void				ft_putstr_col(char *str, char *col);
+void				ft_putstr_col_fd(char *str, char *col, int fd);
+void				ft_putendl_col(char *str, char *col);
+void				ft_putendl_col_fd(char *str, char *col, int fd);
+void				ft_putnbr_col(int nb, char *col);
+void				ft_putnbr_col_fd(int nb, char *col, int fd);
+void				ft_putnbrendl_col(int nb, char *col);
+void				ft_putnbrendl_col_fd(int nb, char *col, int fd);
 
 #endif

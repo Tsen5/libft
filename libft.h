@@ -112,6 +112,7 @@ char				**ft_dbarrdup(char **o_array);
 char				**ft_dbarr_add(char **array, char *content);
 char				**ft_dbarr_del(char **array, int index);
 char				**ft_dbarr_edit(char **array, char *content, int i);
+char				**ft_dbarr_free(char **array);
 void				ft_putnbrendl(int n);
 void				ft_putstr_bdr(char const *s, char bdr);
 void				ft_putstr_bdr_fd(char const *s, char bdr, int fd);

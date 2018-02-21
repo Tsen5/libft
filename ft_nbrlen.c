@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_onlyspc.c                                       :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/15 12:08:30 by slegros           #+#    #+#             */
-/*   Updated: 2018/02/15 13:26:41 by slegros          ###   ########.fr       */
+/*   Created: 2018/02/20 08:46:39 by slegros           #+#    #+#             */
+/*   Updated: 2018/02/20 08:46:43 by slegros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_onlyspc(char *str)
+int		ft_nbrlen(int nb)
 {
 	int		i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 1;
+	while (nb >= 10)
 	{
-		if (ft_isspace(str[i]) == 0)
-			return (0);
+		nb = nb / 10;
 		i++;
 	}
-	return (1);
+	return (i);
 }

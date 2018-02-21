@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slegros <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 00:40:27 by slegros           #+#    #+#             */
-/*   Updated: 2017/11/29 22:46:54 by slegros          ###   ########.fr       */
+/*   Updated: 2018/02/20 08:47:29 by slegros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@
 
 # define BUFF_SIZE 300
 
-# define RED   "\x1B[31m"
-# define GRN   "\x1B[32m"
-# define YEL   "\x1B[33m"
-# define BLU   "\x1B[34m"
-# define MAG   "\x1B[35m"
-# define CYN   "\x1B[36m"
-# define WHT   "\x1B[37m"
+# define RED "\x1B[31m"
+# define GRN "\x1B[32m"
+# define YEL "\x1B[33m"
+# define BLU "\x1B[34m"
+# define MAG "\x1B[35m"
+# define CYN "\x1B[36m"
+# define WHT "\x1B[37m"
+# define BOLD "\x1B[1m"
+# define UNDE "\x1B[4m"
+# define REVE "\x1B[7m"
 # define RESET "\x1B[0m"
 
 typedef struct		s_list
@@ -129,5 +132,8 @@ void				ft_putnbr_col(int nb, char *col);
 void				ft_putnbr_col_fd(int nb, char *col, int fd);
 void				ft_putnbrendl_col(int nb, char *col);
 void				ft_putnbrendl_col_fd(int nb, char *col, int fd);
+char				*ft_strinsert(char *s1, char c, int place);
+char				*ft_strrem(char *s1, int place);
+int					ft_nbrlen(int nb);
 
 #endif

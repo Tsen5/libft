@@ -32,7 +32,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_putnbrendl_fd.c ft_strnbc.c ft_onlyspc.c ft_putstr_col.c \
 	  ft_putstr_col_fd.c ft_putendl_col.c ft_putendl_col_fd.c ft_putnbr_col.c \
 	  ft_putnbr_col_fd.c ft_putnbrendl_col.c ft_putnbrendl_col_fd.c \
-	  ft_dbarrprint_fd.c ft_dbarr_free.c
+	  ft_dbarrprint_fd.c ft_dbarr_free.c ft_strinsert.c ft_strrem.c ft_nbrlen.c
 
 SRCO = $(SRC:.c=.o)
 

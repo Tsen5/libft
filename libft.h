@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
+/*   By: swann <swann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 00:40:27 by slegros           #+#    #+#             */
-/*   Updated: 2018/02/20 08:47:29 by slegros          ###   ########.fr       */
+/*   Updated: 2018/04/06 13:21:14 by swann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 # define BUFF_SIZE 300
 
+# define BLK "\x1B[30m"
 # define RED "\x1B[31m"
 # define GRN "\x1B[32m"
 # define YEL "\x1B[33m"
@@ -28,7 +29,16 @@
 # define MAG "\x1B[35m"
 # define CYN "\x1B[36m"
 # define WHT "\x1B[37m"
+# define BBLK "\x1B[90m"
+# define BRED "\x1B[91m"
+# define BGRN "\x1B[92m"
+# define BYEL "\x1B[93m"
+# define BBLU "\x1B[94m"
+# define BMAG "\x1B[95m"
+# define BCYN "\x1B[96m"
+# define BWHT "\x1B[97m"
 # define BOLD "\x1B[1m"
+# define ITLC "\x1B[3m"
 # define UNDE "\x1B[4m"
 # define REVE "\x1B[7m"
 # define RESET "\x1B[0m"
@@ -39,6 +49,15 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct				s_brk
+{
+	int						cursh;
+	int						subsh;
+	int						quote;
+	int						dquote;
+	int						bquote;
+}							t_brk;
 
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
@@ -108,6 +127,7 @@ int					ft_toabs(int c);
 int					ft_pgcd(int a, int b);
 char				**ft_strsplitspc(char const *s);
 int					get_next_line(const int fd, char **line);
+char				**ft_dbarrnew(int nb);
 void				ft_dbarrprint(char **dbarr);
 void				ft_dbarrprint_fd(char **dbarr, int fd);
 int					ft_dbarrlen(char **dbarr);
@@ -115,7 +135,10 @@ char				**ft_dbarrdup(char **o_array);
 char				**ft_dbarr_add(char **array, char *content);
 char				**ft_dbarr_del(char **array, int index);
 char				**ft_dbarr_edit(char **array, char *content, int i);
+char				**ft_dbarrjoin(char **dbarr1, char **dbarr2);
+char				**ft_dbarrjoinfree(char **dbarr1, char **dbarr2, int mode);
 char				**ft_dbarr_free(char **array);
+char				*ft_dbarrtostr(char **dbarr);
 void				ft_putnbrendl(int n);
 void				ft_putstr_bdr(char const *s, char bdr);
 void				ft_putstr_bdr_fd(char const *s, char bdr, int fd);
@@ -132,8 +155,11 @@ void				ft_putnbr_col(int nb, char *col);
 void				ft_putnbr_col_fd(int nb, char *col, int fd);
 void				ft_putnbrendl_col(int nb, char *col);
 void				ft_putnbrendl_col_fd(int nb, char *col, int fd);
+void				ft_putchar_col(char c, char *col);
+void				ft_putchar_col_fd(char c, char *col, int fd);
 char				*ft_strinsert(char *s1, char c, int place);
 char				*ft_strrem(char *s1, int place);
 int					ft_nbrlen(int nb);
+int					ft_inbrk(char *str, int index);
 
 #endif

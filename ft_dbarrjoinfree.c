@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_col.c                                    :+:      :+:    :+:   */
+/*   ft_dbarrjoinfree.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swann <swann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/15 12:06:57 by slegros           #+#    #+#             */
-/*   Updated: 2018/03/08 13:44:05 by swann            ###   ########.fr       */
+/*   Created: 2018/03/02 01:21:01 by slegros           #+#    #+#             */
+/*   Updated: 2018/03/02 01:21:23 by slegros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_col(char *str, char *col)
+char	**ft_dbarrjoinfree(char **dbarr1, char **dbarr2, int mode)
 {
-	ft_putstr(col);
-	ft_putstr(str);
-	ft_putstr(RESET);
+	char	**dbarr;
+
+	dbarr = ft_dbarrjoin(dbarr1, dbarr2);
+	if (mode == 1 || mode == 3)
+		ft_dbarr_free(dbarr1);
+	if (mode == 2 || mode == 3)
+		ft_dbarr_free(dbarr2);
+	return (dbarr);
 }

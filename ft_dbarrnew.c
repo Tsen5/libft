@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_col.c                                    :+:      :+:    :+:   */
+/*   ft_dbarrnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swann <swann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/15 12:06:57 by slegros           #+#    #+#             */
-/*   Updated: 2018/03/08 13:44:05 by swann            ###   ########.fr       */
+/*   Created: 2018/03/13 11:34:43 by slegros           #+#    #+#             */
+/*   Updated: 2018/03/13 15:51:19 by slegros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_col(char *str, char *col)
+char	**ft_dbarrnew(int nb)
 {
-	ft_putstr(col);
-	ft_putstr(str);
-	ft_putstr(RESET);
+	char	**dbarr;
+	int		i;
+
+	if (!(dbarr = (char **)malloc(sizeof(char *) * (nb + 1))))
+		return (NULL);
+	i = 0;
+	while (i < nb + 1)
+	{
+		dbarr[i] = NULL;
+		i++;
+	}
+	return (dbarr);
 }

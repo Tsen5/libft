@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_col.c                                    :+:      :+:    :+:   */
+/*   ft_dbarrtostr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swann <swann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/15 12:06:57 by slegros           #+#    #+#             */
-/*   Updated: 2018/03/08 13:44:05 by swann            ###   ########.fr       */
+/*   Created: 2018/03/12 18:00:33 by slegros           #+#    #+#             */
+/*   Updated: 2018/03/12 18:09:35 by slegros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_col(char *str, char *col)
+char	*ft_dbarrtostr(char **dbarr)
 {
-	ft_putstr(col);
-	ft_putstr(str);
-	ft_putstr(RESET);
+	int		i;
+	char	*str;
+
+	i = -1;
+	str = ft_strnew(0);
+	while (dbarr[++i] != NULL)
+	{
+		str = ft_strjoinfree(str, dbarr[i], 1);
+		if (dbarr[i + 1] != NULL)
+			str = ft_strjoinfree(str, " ", 1);
+	}
+	return (str);
 }

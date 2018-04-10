@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swann <swann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: slegros <slegros@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 00:40:27 by slegros           #+#    #+#             */
-/*   Updated: 2018/04/06 13:21:14 by swann            ###   ########.fr       */
+/*   Updated: 2018/04/10 19:58:22 by slegros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct				s_brk
+typedef struct		s_brk
 {
-	int						cursh;
-	int						subsh;
-	int						quote;
-	int						dquote;
-	int						bquote;
-}							t_brk;
+	int				cursh;
+	int				subsh;
+	int				quote;
+	int				dquote;
+	int				bquote;
+}					t_brk;
 
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);

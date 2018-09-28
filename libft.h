@@ -12,12 +12,16 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
+
 # include <unistd.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
 # include <stdlib.h>
+
+/*
+** # include <sys/types.h>
+** # include <sys/stat.h>
+** # include <fcntl.h>
+** # include <string.h>
+*/
 
 # define BUFF_SIZE 300
 
@@ -68,6 +72,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strdup(const char *s);
+char				*ft_strdupf(char *str, char *tmp);
 size_t				ft_strlen(const char *s);
 char				*ft_strstr(const char *str1, const char *str2);
 char				*ft_strnstr(const char *str1, const char *str2, size_t n);
@@ -85,6 +90,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isnumber(char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				*ft_memalloc(size_t size);
@@ -100,6 +106,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
+char				*ft_strtrimf(char *s);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -139,6 +146,9 @@ char				**ft_dbarrjoin(char **dbarr1, char **dbarr2);
 char				**ft_dbarrjoinfree(char **dbarr1, char **dbarr2, int mode);
 char				**ft_dbarr_free(char **array);
 char				*ft_dbarrtostr(char **dbarr);
+int					ft_dbarrichr(char **dbarr, char *str);
+int					ft_dbarrirchr(char **dbarr, char *str);
+int					ft_dbarrnbstr(char **dbarr, char *str);
 void				ft_putnbrendl(int n);
 void				ft_putstr_bdr(char const *s, char bdr);
 void				ft_putstr_bdr_fd(char const *s, char bdr, int fd);
@@ -161,5 +171,7 @@ char				*ft_strinsert(char *s1, char c, int place);
 char				*ft_strrem(char *s1, int place);
 int					ft_nbrlen(int nb);
 int					ft_inbrk(char *str, int index);
+int					ft_strnbstr(char *str, char find);
+int					ft_strnoreadable(char *str);
 
 #endif
